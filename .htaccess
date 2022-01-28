@@ -1,0 +1,8 @@
+# Activer la réécriture de l'url
+Options +FollowSymlinks
+RewriteEngine on
+
+# Définition des règles de réécriture
+RewriteRule ^greetings/list   api/index.php?view=all [nc,qsa]
+RewriteRule ^greetings/random   api/index.php?view=single&random=1 [nc,qsa]
+RewriteRule ^greetings/show/([0-9]+)   api/index.php?view=single&id=$1 [nc,qsa]
